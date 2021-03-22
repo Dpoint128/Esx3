@@ -1,5 +1,5 @@
 # Esx3
-Spigot plugin adding a lot of necessary things for the server
+1 плагин который улучшит твой сервер
 
 ### Важно
 Плагин требует PlaceholderAPI
