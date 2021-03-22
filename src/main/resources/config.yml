@@ -1,0 +1,43 @@
+messagesLang: en # Язык сообщений (ru, eu)
+
+sleepTabStatus: true #Отображение в табе "Zz" после ника, если игрок спит
+skipNight: #Настройки пропуска ночи
+  enable: true #Включить(<true>) / Выключить(<false>)
+  skipSpeed: 60 #Скорость скипа(Чтобы отключить скип, не нужно ставить скорость на 10000, просто включите instantSkip)
+  sleepingPlayersThreshold: 0.5 # Порог спящих игроков для пропуска ночи (0.00 - 1.00). 0.5 - половина
+  instantSkip: false # <true>, если хотите мнгновенный скип ночи, без анимации
+
+chat: # Настройки чата
+  enabled: true #Включить(<true>) / Выключить(<false>) расширенный чат
+  local: true #Включить(<true>) / Выключить(<false>) локальный чат
+  radius: 128 #Радиус локального чата
+
+  globalFormat: "{chat_prefix} [{world_prefix}] ({player}) > {message}"
+  localFormat: "{chat_prefix} ({player}) > {message}"
+
+  prefixColor: "cccccc"
+  playerColor: "96ced4"
+
+  prefix: # Префиксы в чате
+    # Пишет в глобальном чате в каком миру игрок
+    worldPrefixEnabled: true
+    worldPrefix:
+      world: "World"
+      color_world: "97cc99"
+
+      world_nether: "Nether"
+      color_world_nether: "cc9797"
+
+      world_the_end: "End"
+      color_world_the_end: "af97cc"
+
+      # Добавте сюда префикс для своих миров если они есть
+      # Пример:
+      # otherWorld : "Мир 5"
+      # color_otherWorld : "aabbcc"
+
+    # Префикс обозначающий в какой чат написал игрок (глобальный, локальный)
+    chatPrefixEnabled: true
+    chatPrefix:
+      global: "Ⓖ"
+      local: "Ⓛ"

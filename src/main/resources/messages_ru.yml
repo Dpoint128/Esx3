@@ -1,0 +1,8 @@
+configReloaded: "Плагин перезагружен"
+invalidSubcommand: "Неверная подкоманда"
+noPermission: "Нет прав для выполнения данной команды"
+invalidArgument: "Неверный аргумент"
+skipSpeedChanged: "Скорость пропуска ночи изменена"
+invalidSkipSpeed: "Неверное число. Введите число в промежутке от {min} до {max}"
+NightSkipEnabled: "Пропуск ночи включён"
+NightSkipDisabled: "Пропуск ночи выключен"
