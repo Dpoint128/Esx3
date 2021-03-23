@@ -1,6 +1,6 @@
 name: Esx3
 main: ru.lmpx.Esx3.Main
-version: "1.0.0"
+version: "1.0.1"
 author: LIMPIX31
 api-version: 1.16
 description: server tools kit for lmpx server
@@ -11,15 +11,9 @@ commands:
   lmpx:
     usage: /Esx3 [reload]
     description: management lmpx plugin
-  sleepManager:
-    usage: /sleepManager [speed]
-    description: management skip night
 
 permissions:
   esx3.*:
     children:
       - esx3.esx3plugin
       - esx3.reloadPlugin
-      - esx3.sleepManager
-      - esx3.sleepManagerEnable
-      - esx3.sleepManagerSetSpeed

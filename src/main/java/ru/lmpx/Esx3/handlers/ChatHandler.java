@@ -64,7 +64,10 @@ public class ChatHandler implements Listener {
 
 
             if (e.getMessage().charAt(0) == '!') {
-                message = message.replaceAll("\\{chat_prefix}", globalChatPrefix);
+                if(chatPrefixEnabled)message = message.replaceAll("\\{chat_prefix}", globalChatPrefix);
+                else {
+                    message = message.replaceAll("\\{chat_prefix}", "");
+                }
                 if (worldPrefixEnabled) {
                     message = message.replaceAll("\\{world_prefix}",
                             "<SOLID:" + config.getString(wppath + "color_" + world) + ">" + config.getString(wppath + world) + "<SOLID:" + prefixColor + ">");
@@ -74,18 +77,21 @@ public class ChatHandler implements Listener {
 
                 message = IridiumColorAPI.process(message);
                 Bukkit.broadcastMessage(message);
-                targets.clear();
 
             } else {
-                message = message.replaceAll("\\{chat_prefix}", localChatPrefix);
+                if(chatPrefixEnabled)message = message.replaceAll("\\{chat_prefix}", localChatPrefix);
+                else {
+                    message = message.replaceAll("\\{chat_prefix}", "");
+                }
 
                 for (Player target : targets) {
                     message = IridiumColorAPI.process(message);
-                    if (target.getLocation().distance(sender.getLocation()) <= radius) {
-                        target.sendMessage(message);
+                    if(target.getWorld().equals(sender.getWorld())){
+                        if (target.getLocation().distance(sender.getLocation()) <= radius) {
+                            target.sendMessage(message);
+                        }
                     }
                 }
-                targets.clear();
 
             }
         } else {
@@ -94,9 +100,10 @@ public class ChatHandler implements Listener {
                     "<SOLID:" + config.getString(wppath + "color_" + world) + ">" + config.getString(wppath + world) + "<SOLID:" + prefixColor + ">");
 
             Bukkit.broadcastMessage(message);
-
-            targets.clear();
         }
+
+        e.setCancelled(true);
+
     }
 
 }

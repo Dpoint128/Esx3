@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.lmpx.Esx3.commands.Esx3Command.Esx3Command;
-import ru.lmpx.Esx3.commands.SleepManager.SleepManager;
 import ru.lmpx.Esx3.handlers.ChatHandler;
 
 import java.io.File;
@@ -14,10 +13,6 @@ public class Main extends JavaPlugin {
 
     private TablistThread tbth;
     private SleepCheckThread sleepCheckThread;
-
-    //command handlers
-    private Esx3Command esx3Command;
-    private SleepManager sleepManager;
 
     @Override
     public void onEnable() {
@@ -49,12 +44,6 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new ChatHandler(this), this);
 
 
-        esx3Command = new Esx3Command(this);
-        esx3Command.register();
-
-        sleepManager = new SleepManager(this);
-        sleepManager.register();
-
         try {
             Functions.createMessagesFile(this);
         } catch (IOException e) {
@@ -67,6 +56,11 @@ public class Main extends JavaPlugin {
             getLogger().severe(ChatColor.RED + "Required PlaceholderAPI");
             Bukkit.getPluginManager().disablePlugin(this);
         }
+
+        //command handlers
+        Esx3Command esx3Command = new Esx3Command(this);
+        esx3Command.register();
+
     }
 
     @Override
