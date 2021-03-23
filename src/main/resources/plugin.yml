@@ -8,9 +8,9 @@ softdepend:
   - PlaceholderAPI
 
 commands:
-  lmpx:
+  esx3:
     usage: /Esx3 [reload]
-    description: management lmpx plugin
+    description: management esx3 plugin
 
 permissions:
   esx3.*:

@@ -85,9 +85,9 @@ public class Esx3Command implements CommandExecutor, LCommand {
     }
 
     public void register() {
-//        plugin.getCommand(name()).setExecutor(this);
-//        plugin.getCommand(name()).setTabCompleter(new LTabCompleter(scs));
-//        plugin.getLogger().info(Functions.cmdregistered(name()));
+        plugin.getCommand(name()).setExecutor(this);
+        plugin.getCommand(name()).setTabCompleter(new LTabCompleter(scs));
+        plugin.getLogger().info(Functions.cmdregistered(name()));
     }
 
     @Override

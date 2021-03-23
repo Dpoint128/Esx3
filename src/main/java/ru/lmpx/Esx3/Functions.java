@@ -11,7 +11,7 @@ import java.io.*;
 public abstract class Functions {
 
     private static String getLmpxMessageFinalString(String msg) {
-        return ChatColor.BLUE + "[LMPX] " + ChatColor.WHITE + msg;
+        return ChatColor.BLUE + "[ESX3] " + ChatColor.WHITE + msg;
     }
 
     public static void lmpxMessage(CommandSender sender, String msg) {
