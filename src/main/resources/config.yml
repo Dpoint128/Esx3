@@ -1,4 +1,4 @@
-messagesLang: en # Язык сообщений (ru, eu)
+messagesLang: ru # Язык сообщений (ru, eu)
 
 sleepTabStatus: true #Отображение в табе "Zz" после ника, если игрок спит
 skipNight: #Настройки пропуска ночи
