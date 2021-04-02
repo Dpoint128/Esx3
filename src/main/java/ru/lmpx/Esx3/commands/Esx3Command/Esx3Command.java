@@ -43,12 +43,26 @@ public class Esx3Command implements CommandExecutor, LCommand {
         }
 
         if (args.length == 0) {
-            String help = "&1/lmpx &2[ &3reload &2]";
-            help = help
-                    .replaceAll("&1", "<SOLID:87fff5>")
-                    .replaceAll("&2", "<SOLID:59ff9e>")
-                    .replaceAll("&3", "<SOLID:fff759>");
-            sender.sendMessage(IridiumColorAPI.process(help));
+            StringBuilder help = new StringBuilder();
+            help.append("&1/" + name() + " &2[ ");
+            Iterator<SubCommand> sci = scs.iterator();
+            int iterated = 0;
+            while (sci.hasNext()) {
+                if (iterated < scs.size()-1) {
+                    help.append("&3" + sci.next().name() + " &4|");
+                } else {
+                    help.append("&3" + sci.next().name());
+                }
+                iterated++;
+            }
+            help.append("&2 ]");
+            String helpString = help.toString()
+                    .replaceAll("&1", "<SOLID:6efff8>")
+                    .replaceAll("&2", "<SOLID:ff6e6e>")
+                    .replaceAll("&3", "<SOLID:a1ff6e>")
+                    .replaceAll("&4", "<SOLID:a3a3a3>");
+
+            sender.sendMessage(IridiumColorAPI.process(helpString));
             return true;
         } else {
 
@@ -92,7 +106,7 @@ public class Esx3Command implements CommandExecutor, LCommand {
 
     @Override
     public String getPermission() {
-        return "esx3plugin";
+        return "pluginCommand";
     }
 
     @Override

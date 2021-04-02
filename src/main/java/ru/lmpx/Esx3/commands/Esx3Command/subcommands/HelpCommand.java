@@ -16,7 +16,7 @@ public class HelpCommand extends SubCommand implements LCommand {
 
     @Override
     public void onCommand(CommandSender sender, @NotNull String[] args) {
-        Functions.lmpxMessage(sender, "some help string");
+        Functions.pluginMessage(sender, "some help string");
     }
 
     @Override

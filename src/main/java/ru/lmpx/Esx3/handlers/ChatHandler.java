@@ -102,7 +102,7 @@ public class ChatHandler implements Listener {
             Bukkit.broadcastMessage(message);
         }
 
-        e.setCancelled(true);
+        e.getRecipients().clear();
 
     }
 

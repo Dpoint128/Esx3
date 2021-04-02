@@ -19,7 +19,7 @@ public class ReloadCommand extends SubCommand implements LCommand {
     @Override
     public void onCommand(CommandSender sender, @NotNull String[] args) {
         plugin.reloadConfig();
-        Functions.lmpxMessage(sender, ChatColor.GREEN + Functions.getMessage("configReloaded"));
+        Functions.pluginMessage(sender, ChatColor.GREEN + Functions.getMessage("configReloaded"));
     }
 
     @Override

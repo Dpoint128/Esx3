@@ -1,5 +1,6 @@
 package ru.lmpx.Esx3;
 
+import com.iridium.iridiumcolorapi.IridiumColorAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -10,24 +11,24 @@ import java.io.*;
 
 public abstract class Functions {
 
-    private static String getLmpxMessageFinalString(String msg) {
+    private static String getPluginMessageFinalString(String msg) {
         return ChatColor.BLUE + "[ESX3] " + ChatColor.WHITE + msg;
     }
 
-    public static void lmpxMessage(CommandSender sender, String msg) {
-        sender.sendMessage(getLmpxMessageFinalString(msg));
+    public static void pluginMessage(CommandSender sender, String msg) {
+        sender.sendMessage(getPluginMessageFinalString(msg));
     }
 
-    public static void lmpxMessage(Player player, String msg) {
-        player.sendMessage(getLmpxMessageFinalString(msg));
+    public static void pluginMessage(Player player, String msg) {
+        player.sendMessage(getPluginMessageFinalString(msg));
     }
 
     public static void invalidSubcommand(CommandSender sender) {
-        lmpxMessage(sender, ChatColor.RED + getMessage("invalidSubcommand"));
+        pluginMessage(sender, ChatColor.RED + getMessage("invalidSubcommand"));
     }
 
     public static void noPermission(CommandSender sender) {
-        lmpxMessage(sender, ChatColor.RED + getMessage("noPermission"));
+        pluginMessage(sender, ChatColor.RED + getMessage("noPermission"));
     }
 
     public static String permRoot() {
@@ -56,7 +57,7 @@ public abstract class Functions {
     }
 
     public static void invalidArgument(CommandSender sender) {
-        lmpxMessage(sender, ChatColor.RED + getMessage("invalidArgument"));
+        pluginMessage(sender, ChatColor.RED + getMessage("invalidArgument"));
     }
 
     public static void createMessagesFile(Main plugin) throws IOException {
@@ -114,7 +115,7 @@ public abstract class Functions {
             }
         }
         YamlConfiguration messages = YamlConfiguration.loadConfiguration(messagesFile);
-        return messages.getString(path);
+        return IridiumColorAPI.process(ChatColor.translateAlternateColorCodes('&',messages.getString(path)));
 
     }
 
