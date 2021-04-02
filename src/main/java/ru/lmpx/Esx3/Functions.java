@@ -61,7 +61,7 @@ public abstract class Functions {
     }
 
     public static void createMessagesFile() throws IOException {
-        Main plugin =  Main.getPlugin(Main.class);
+        Main plugin = Main.getPlugin(Main.class);
         String lang = plugin.getConfig().getString("messagesLang");
 
         if (!(lang.equalsIgnoreCase("ru") ||
@@ -116,8 +116,12 @@ public abstract class Functions {
             }
         }
         YamlConfiguration messages = YamlConfiguration.loadConfiguration(messagesFile);
-        return IridiumColorAPI.process(ChatColor.translateAlternateColorCodes('&',messages.getString(path)));
+        return IridiumColorAPI.process(ChatColor.translateAlternateColorCodes('&', messages.getString(path)));
 
+    }
+
+    public static String colorParse(String s) {
+        return IridiumColorAPI.process(ChatColor.translateAlternateColorCodes('&', s));
     }
 
 }

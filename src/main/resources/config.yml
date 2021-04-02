@@ -12,15 +12,11 @@ chat: # Настройки чата
   local: true #Включить(<true>) / Выключить(<false>) локальный чат
   radius: 128 #Радиус локального чата
 
-  globalFormat: "{chat_prefix} [{world_prefix}] ({player}) > {message}"
-  localFormat: "{chat_prefix} ({player}) > {message}"
-
-  prefixColor: "cccccc"
-  playerColor: "96ced4"
+  globalFormat: "&7{chat_prefix} [{world_prefix}&7] ({player}&7) > {message}"
+  localFormat: "&7{chat_prefix} {player} (<SOLID:afff69>{recipients}&7) > {message}"
 
   prefix: # Префиксы в чате
     # Пишет в глобальном чате в каком миру игрок
-    worldPrefixEnabled: true
     worldPrefix:
       world: "World"
       color_world: "97cc99"
@@ -37,7 +33,6 @@ chat: # Настройки чата
       # color_otherWorld : "aabbcc"
 
     # Префикс обозначающий в какой чат написал игрок (глобальный, локальный)
-    chatPrefixEnabled: true
     chatPrefix:
       global: "Ⓖ"
       local: "Ⓛ"
