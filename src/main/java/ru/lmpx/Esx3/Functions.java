@@ -60,7 +60,8 @@ public abstract class Functions {
         pluginMessage(sender, ChatColor.RED + getMessage("invalidArgument"));
     }
 
-    public static void createMessagesFile(Main plugin) throws IOException {
+    public static void createMessagesFile() throws IOException {
+        Main plugin =  Main.getPlugin(Main.class);
         String lang = plugin.getConfig().getString("messagesLang");
 
         if (!(lang.equalsIgnoreCase("ru") ||
@@ -109,7 +110,7 @@ public abstract class Functions {
         File messagesFile = new File(plugin.getDataFolder() + File.separator + ("messages_" + lang + ".yml"));
         if (!messagesFile.exists()) {
             try {
-                createMessagesFile(plugin);
+                createMessagesFile();
             } catch (IOException e) {
                 e.printStackTrace();
             }

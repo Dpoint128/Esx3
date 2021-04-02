@@ -6,12 +6,9 @@ import org.bukkit.entity.Player;
 
 public class TablistThread implements Runnable {
 
-    private final Main plugin;
     private boolean running = true;
 
-    public TablistThread(Main plugin) {
-        this.plugin = plugin;
-    }
+    private final Main plugin =  Main.getPlugin(Main.class);
 
     public void start() {
         new Thread(this).start();

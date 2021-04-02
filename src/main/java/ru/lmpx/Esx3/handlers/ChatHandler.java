@@ -15,11 +15,8 @@ import java.util.Set;
 
 public class ChatHandler implements Listener {
 
-    private final Main plugin;
+    private final Main plugin =  Main.getPlugin(Main.class);
 
-    public ChatHandler(Main plugin) {
-        this.plugin = plugin;
-    }
 
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {

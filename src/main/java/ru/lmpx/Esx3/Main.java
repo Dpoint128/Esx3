@@ -33,19 +33,19 @@ public class Main extends JavaPlugin {
         }
 
 
-        tbth = new TablistThread(this);
+        tbth = new TablistThread();
         tbth.start();
         getLogger().info(ChatColor.GREEN + "Tablist updating thread started");
 
-        sleepCheckThread = new SleepCheckThread(this);
+        sleepCheckThread = new SleepCheckThread();
         sleepCheckThread.runTaskTimer(this, 0L, 1);
 
 
-        Bukkit.getPluginManager().registerEvents(new ChatHandler(this), this);
+        Bukkit.getPluginManager().registerEvents(new ChatHandler(), this);
 
 
         try {
-            Functions.createMessagesFile(this);
+            Functions.createMessagesFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -58,7 +58,7 @@ public class Main extends JavaPlugin {
         }
 
         //command handlers
-        Esx3Command esx3Command = new Esx3Command(this);
+        Esx3Command esx3Command = new Esx3Command();
         esx3Command.register();
 
     }

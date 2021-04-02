@@ -8,12 +8,7 @@ import ru.lmpx.Esx3.commands.LCommand;
 import ru.lmpx.Esx3.commands.SubCommand;
 
 public class HelpCommand extends SubCommand implements LCommand {
-    private final Main plugin;
-
-    public HelpCommand(Main plugin) {
-        this.plugin = plugin;
-    }
-
+    private final Main plugin =  Main.getPlugin(Main.class);
     @Override
     public void onCommand(CommandSender sender, @NotNull String[] args) {
         Functions.pluginMessage(sender, "some help string");

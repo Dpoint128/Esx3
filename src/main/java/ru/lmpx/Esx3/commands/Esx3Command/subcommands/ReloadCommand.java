@@ -10,11 +10,7 @@ import ru.lmpx.Esx3.commands.SubCommand;
 
 public class ReloadCommand extends SubCommand implements LCommand {
 
-    private final Main plugin;
-
-    public ReloadCommand(Main plugin) {
-        this.plugin = plugin;
-    }
+    private final Main plugin =  Main.getPlugin(Main.class);
 
     @Override
     public void onCommand(CommandSender sender, @NotNull String[] args) {

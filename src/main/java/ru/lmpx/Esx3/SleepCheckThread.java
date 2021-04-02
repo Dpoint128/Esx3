@@ -9,11 +9,7 @@ import java.util.List;
 
 public class SleepCheckThread extends BukkitRunnable {
 
-    private final Main plugin;
-
-    public SleepCheckThread(Main plugin) {
-        this.plugin = plugin;
-    }
+    private final Main plugin =  Main.getPlugin(Main.class);
 
 
     @Override

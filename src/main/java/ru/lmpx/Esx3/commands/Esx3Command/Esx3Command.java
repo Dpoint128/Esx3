@@ -20,15 +20,14 @@ import java.util.List;
 
 public class Esx3Command implements CommandExecutor, LCommand {
 
-    private final Main plugin;
+    private final Main plugin =  Main.getPlugin(Main.class);
     private final List<SubCommand> scs;
 
-    public Esx3Command(Main plugin) {
-        this.plugin = plugin;
+    public Esx3Command() {
         scs = new ArrayList<>();
 
-        scs.add(new ReloadCommand(plugin));
-        scs.add(new HelpCommand(plugin));
+        scs.add(new ReloadCommand());
+        scs.add(new HelpCommand());
 
         plugin.getLogger().info(Functions.subcmdregistered(name()));
     }
