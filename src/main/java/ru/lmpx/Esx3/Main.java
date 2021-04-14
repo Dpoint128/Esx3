@@ -13,6 +13,8 @@ public class Main extends JavaPlugin {
 
     private TablistThread tbth;
     private SleepCheckThread sleepCheckThread;
+    private MOTDUpdateThread motdUpdateThread;
+    public static String MOTD = "";
 
     @Override
     public void onEnable() {
@@ -36,6 +38,11 @@ public class Main extends JavaPlugin {
         tbth = new TablistThread();
         tbth.start();
         getLogger().info(ChatColor.GREEN + "Tablist updating thread started");
+
+        motdUpdateThread = new MOTDUpdateThread();
+        motdUpdateThread.start();
+        getLogger().info(ChatColor.GREEN + "MOTD updating thread started");
+
 
         sleepCheckThread = new SleepCheckThread();
         sleepCheckThread.runTaskTimer(this, 0L, 1);
@@ -67,6 +74,9 @@ public class Main extends JavaPlugin {
     public void onDisable() {
         tbth.stop();
         getLogger().info(ChatColor.GREEN + "Tablist updating thread stopped");
+
+        motdUpdateThread.stop();
+        getLogger().info(ChatColor.GREEN + "MOTD updating thread stopped");
     }
 
 

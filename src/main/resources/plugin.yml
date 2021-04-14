@@ -1,9 +1,9 @@
 name: Esx3
 main: ru.lmpx.Esx3.Main
-version: "1.0.1"
+version: "1.0.2"
 author: LIMPIX31
 api-version: 1.16
-description: server tools kit for lmpx server
+description: server tools kit for server
 softdepend:
   - PlaceholderAPI
 

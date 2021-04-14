@@ -36,3 +36,31 @@ chat: # Настройки чата
     chatPrefix:
       global: "Ⓖ"
       local: "Ⓛ"
+
+#Кастомный ТАБ
+CustomTAB:
+  #Включить кастомный таб
+  enabled: true
+  #Интервал обновления
+  interval: 500
+  #Верхняя часть таба
+  header:
+    - "<SOLID:00ffae>#LMPX"
+    - "&7Пинг: {ping}&f &l&7TPS: {tps}"
+    - ""
+  #Нижняя часть таба
+  footer:
+    - ""
+    - "&7Онлайн: <SOLID:fff082>{online}"
+    - "&7ОЗУ: <SOLID:fff082>%server_ram_used%&7 / <SOLID:fff082>%server_ram_max% &7Чанков: <SOLID:fff082>%server_total_chunks% &7Сущностей: <SOLID:fff082>%server_total_entities%"
+    - "&f{motd}"
+  #Формат отображения игрока в табе
+  playerFormat: "{player} {sleeping}"
+  #Формат отображения статуса сна
+  sleepStatus: "&7Zzz"
+
+  # Настройки источника серверных сообщений
+  # Для работы плейсхолдера {MOTD}, сервер должен возвращать text/plain
+  # Если сервер не активен, то {MOTD} - пустая строка => выключено
+  MOTDUrl: "http://localhost:1331/motd"
+  MOTDUpdateInterval: 15000

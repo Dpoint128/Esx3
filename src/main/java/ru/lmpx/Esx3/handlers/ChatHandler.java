@@ -79,8 +79,10 @@ public class ChatHandler implements Listener {
                 List<Player> recipients = new ArrayList<>();
                 for (Player target : targets) {
                     message = Functions.colorParse(message);
-                    if ((target.getWorld().equals(sender.getWorld())) || (target.getLocation().distance(sender.getLocation()) <= radius)) {
-                        recipients.add(target);
+                    if (target.getWorld().equals(sender.getWorld())) {
+                        if(target.getLocation().distance(sender.getLocation()) <= radius){
+                            recipients.add(target);
+                        }
                     }
                 }
                 int recipientscount = recipients.size() - 1;
